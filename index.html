@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bob and Polly Ann Powers Dressing and Gravy</title>
+  <meta name="description" content="Ingredients, pans, and a timed method for Bob and Polly Ann Powers dressing and gravy.">
+  <meta name="theme-color" content="#f4efe6">
+  <style>
+    :root {
+      --paper: #f4efe6;
+      --card: #fffaf3;
+      --ink: #241c16;
+      --muted: #5e5348;
+      --line: #e3d5c2;
+      --rust: #8a3126;
+      --chip: #f0ddc2;
+      --green: #234e39;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 18px/1.45 "Segoe UI", system-ui, sans-serif;
+    }
+    header, main { max-width: 40rem; margin: 0 auto; padding: 1.1rem 1rem 2.5rem; }
+    header { padding-bottom: 0.4rem; }
+    h1 { font-family: Georgia, "Palatino Linotype", serif; font-size: 2rem; line-height: 1.15; margin: 0 0 0.4rem; }
+    .by { color: var(--muted); margin: 0; }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      gap: 0.45rem;
+      overflow-x: auto;
+      background: var(--paper);
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    nav a {
+      flex: 0 0 auto;
+      color: var(--ink);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      text-decoration: none;
+      padding: 0.45rem 0.8rem;
+      font-size: 0.95rem;
+    }
+    section { margin-top: 1.6rem; scroll-margin-top: 4.2rem; }
+    h2 { font-family: Georgia, "Palatino Linotype", serif; font-size: 1.45rem; margin: 0 0 0.7rem; }
+    h3 { font-size: 1.05rem; margin: 1.1rem 0 0.35rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      margin: 0 0 0.7rem;
+    }
+    .times { display: grid; gap: 0.55rem; }
+    .times div { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+    .times strong { color: var(--rust); white-space: nowrap; }
+    ul, ol { margin: 0.2rem 0 0; padding: 0; }
+    .shop, .pans, .clock { list-style: none; }
+    .shop li, .pans li, .clock li, .steps li {
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .shop li:last-child, .pans li:last-child, .clock li:last-child, .steps li:last-child { border-bottom: 0; }
+    label { flex: 1; }
+    input[type="checkbox"] { width: 1.25rem; height: 1.25rem; margin-top: 0.2rem; accent-color: var(--green); }
+    .when { color: var(--green); font-weight: 700; min-width: 4.6rem; }
+    .steps { list-style: none; counter-reset: step; }
+    .steps li { counter-increment: step; }
+    .steps li::before {
+      content: counter(step);
+      flex: 0 0 auto;
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 50%;
+      background: var(--rust);
+      color: white;
+      font-size: 0.95rem;
+      display: grid;
+      place-items: center;
+      margin-top: 0.1rem;
+    }
+    .step p { margin: 0; }
+    .mins {
+      display: inline-block;
+      margin-top: 0.3rem;
+      background: var(--chip);
+      border-radius: 999px;
+      padding: 0.12rem 0.55rem;
+      font-size: 0.92rem;
+    }
+    .note { color: var(--muted); font-size: 0.98rem; }
+    .group { margin-top: 0.8rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bob and Polly Ann Powers Dressing and Gravy</h1>
+    <p class="by">Circa 2024, as recalled by Pam Sheridan and Mack Powers.</p>
+    <nav>
+      <a href="#time">Time</a>
+      <a href="#shop">Ingredients</a>
+      <a href="#pans">Pans</a>
+      <a href="#clock">Order</a>
+      <a href="#steps">Steps</a>
+    </nav>
+  </header>
+  <main>
+    <section id="time">
+      <h2>Time</h2>
+      <div class="card times">
+        <div><span>Stock and dressing the same day</span><strong>3–3½ hours</strong></div>
+        <div><span>If the turkey broth is already made</span><strong>about 2 hours</strong></div>
+        <div><span>Gravy, mostly while the turkey roasts</span><strong>about 45 minutes</strong></div>
+        <div><span>Hands-on work for the long day</span><strong>about 1 hour 20 minutes</strong></div>
+      </div>
+      <p class="note">Step times overlap. The stock simmers while the cornbread and dressing are made. The clock above is start to finish, not the sum of every step.</p>
+    </section>
+
+    <section id="shop">
+      <h2>Ingredients</h2>
+      <p class="note">Check these off at the store. Onions, celery, garlic, and eggs are totaled so the dressing and the stock are not bought twice.</p>
+
+      <div class="card">
+        <h3>To buy</h3>
+        <ul class="shop">
+          <li><input id="onion" type="checkbox"><label for="onion">3 onions (1 for the dressing, 2 for the stock)</label></li>
+          <li><input id="celery" type="checkbox"><label for="celery">1 bunch celery (2–3 stalks for the dressing, 4 stalks for the stock)</label></li>
+          <li><input id="garlic" type="checkbox"><label for="garlic">1 head garlic (2–3 cloves for the dressing, 4 cloves for the stock)</label></li>
+          <li><input id="buttermilk" type="checkbox"><label for="buttermilk">1 cup buttermilk</label></li>
+          <li><input id="eggs" type="checkbox"><label for="eggs">7 large eggs (1 for the cornbread, 6 for the dressing)</label></li>
+          <li><input id="cheddar" type="checkbox"><label for="cheddar">16 oz medium cheddar</label></li>
+          <li><input id="butter" type="checkbox"><label for="butter">1 stick butter (½ cup), plus a little more if you enrich the gravy</label></li>
+          <li><input id="cornmeal" type="checkbox"><label for="cornmeal">1 cup cornmeal</label></li>
+          <li><input id="buns" type="checkbox"><label for="buns">8 hamburger buns</label></li>
+          <li><input id="oil" type="checkbox"><label for="oil">Vegetable oil: ¼ cup for the cornbread, plus about 1 tablespoon to cook the vegetables</label></li>
+          <li><input id="bp" type="checkbox"><label for="bp">1 tsp baking powder</label></li>
+          <li><input id="bs" type="checkbox"><label for="bs">½ tsp baking soda</label></li>
+          <li><input id="salt" type="checkbox"><label for="salt">Salt</label></li>
+          <li><input id="pepper" type="checkbox"><label for="pepper">Black pepper</label></li>
+          <li><input id="bay" type="checkbox"><label for="bay">2 bay leaves</label></li>
+          <li><input id="flakes" type="checkbox"><label for="flakes">A pinch of red pepper flakes (optional)</label></li>
+          <li><input id="flour" type="checkbox"><label for="flour">¼ cup all-purpose flour for the gravy. The card says to add flour and does not name an amount. Match it to the ¼ cup of fat.</label></li>
+          <li><input id="chick" type="checkbox"><label for="chick">32 oz chicken broth (the card says “chick broth”)</label></li>
+          <li><input id="legs" type="checkbox"><label for="legs">2–3 turkey legs</label></li>
+          <li><input id="giblets" type="checkbox"><label for="giblets">Turkey giblets and the turkey neck, from the bird you roast</label></li>
+          <li><input id="sausage" type="checkbox"><label for="sausage">1 cup cooked crumbled sausage, or chopped cooked turkey (optional)</label></li>
+          <li><input id="cran" type="checkbox"><label for="cran">1 can Ocean Spray cranberry sauce, for the table</label></li>
+        </ul>
+        <p class="note">At home: 64 oz filtered water for the stock.</p>
+      </div>
+
+      <div class="card group">
+        <h3>As the card groups them</h3>
+        <p><strong>Cornbread.</strong> 1 cup cornmeal, 1 cup buttermilk, 1 large egg, ¼ cup vegetable oil, 1 tsp baking powder, ½ tsp baking soda, ½ tsp salt.</p>
+        <p><strong>Dressing.</strong> 4 cups crumbled cornbread, 8 hamburger buns torn into pieces, 1 medium onion chopped, 2–3 stalks celery chopped, 2–3 cloves garlic minced, 1–2 cups turkey broth, ½ tsp black pepper, salt to taste, a pinch of red pepper flakes (optional), 6 large eggs beaten, 16 oz medium cheddar grated, 1 stick butter melted, 1 cup cooked sausage or chopped cooked turkey (optional).</p>
+        <p><strong>Stock.</strong> 2–3 turkey legs, 2 onions quartered, 4 celery stalks chopped, 4 cloves garlic smashed, 2 bay leaves, 32 oz chicken broth, 64 oz filtered water, salt and pepper to taste.</p>
+        <p><strong>Gravy.</strong> Turkey drippings, ¼ cup of the fat from those drippings, ¼ cup flour, turkey broth, the giblets, and the neck. Salt, pepper, a little butter, and fresh herbs to finish.</p>
+      </div>
+    </section>
+
+    <section id="pans">
+      <h2>Pots and pans</h2>
+      <div class="card">
+        <ul class="pans">
+          <li><input id="pan1" type="checkbox"><label for="pan1">Sheet pan or roasting pan, to brown the turkey legs</label></li>
+          <li><input id="pan2" type="checkbox"><label for="pan2">Large stockpot, for the broth</label></li>
+          <li><input id="pan3" type="checkbox"><label for="pan3">8-inch square baking dish, or an oven-safe skillet, for the cornbread</label></li>
+          <li><input id="pan4" type="checkbox"><label for="pan4">Skillet, for the onion, celery, and garlic</label></li>
+          <li><input id="pan5" type="checkbox"><label for="pan5">Baking sheet, to toast the buns</label></li>
+          <li><input id="pan6" type="checkbox"><label for="pan6">9×13 baking dish, for the dressing. The card says “a greased baking dish” and does not name the size. This batch needs a 9×13.</label></li>
+          <li><input id="pan7" type="checkbox"><label for="pan7">Small saucepan, to simmer the giblets and neck. Use it again for the gravy.</label></li>
+        </ul>
+      </div>
+      <p class="note">Also set out a fine-mesh sieve, a large mixing bowl, two smaller bowls, a whisk, a measuring cup, a grater, a knife, and a board.</p>
+    </section>
+
+    <section id="clock">
+      <h2>Order of work</h2>
+      <p class="note">This is the same-day path. The oven starts at 400°F for the legs and the cornbread, then drops to 350°F for the buns and the dressing.</p>
+      <div class="card">
+        <ul class="clock">
+          <li><span class="when">0:00</span><span>Heat the oven to 400°F. Season the turkey legs. Chop the stock vegetables.</span></li>
+          <li><span class="when">0:15</span><span>Legs go in the oven.</span></li>
+          <li><span class="when">0:50</span><span>Legs into the stockpot with the vegetables, bay leaves, chicken broth, and water. Bring it to a boil.</span></li>
+          <li><span class="when">1:05</span><span>Stock simmers on low. Mix the cornbread and put it in the oven, still at 400°F.</span></li>
+          <li><span class="when">1:30</span><span>Cornbread out to cool. Set the oven to 350°F. Cook the dressing vegetables. Tear the buns. Grate the cheese, beat the eggs, and melt the butter.</span></li>
+          <li><span class="when">1:50</span><span>Toast the buns.</span></li>
+          <li><span class="when">2:05</span><span>Crumble the cornbread and mix the dressing. Ladle 1–2 cups of broth from the simmering stock.</span></li>
+          <li><span class="when">2:20</span><span>Dressing goes into the oven.</span></li>
+          <li><span class="when">2:55</span><span>Dressing comes out. The stock has simmered about 1¾ hours. Give it the rest of the 2 hours if you want, then strain it.</span></li>
+        </ul>
+      </div>
+      <p class="note">If the broth is already made, start at the cornbread. Mix, bake, and cool it, toast the buns, mix the dressing, and bake. That path is about 2 hours.</p>
+      <p class="note">Make the gravy when the roasted turkey comes out. Simmer the giblets and neck during the roast so they are chopped and waiting.</p>
+    </section>
+
+    <section id="steps">
+      <h2>Steps</h2>
+
+      <h3>Stock</h3>
+      <ol class="steps">
+        <li class="step"><p>Heat the oven to 400°F. Season 2–3 turkey legs with salt and pepper. Set them on a sheet pan or in a roasting pan.<span class="mins">about 15 minutes, including the oven</span></p></li>
+        <li class="step"><p>Roast the legs until they are browned.<span class="mins">30–40 minutes</span></p></li>
+        <li class="step"><p>While they roast, quarter 2 onions, chop 4 celery stalks, and smash 4 garlic cloves.<span class="mins">about 10 minutes, during the roast</span></p></li>
+        <li class="step"><p>Put the browned legs in a large stockpot with the onions, celery, garlic, and 2 bay leaves. Add 32 oz chicken broth and 64 oz filtered water. The legs should be covered. Add a little water if they are not. Bring to a boil over medium-high heat.<span class="mins">about 15 minutes</span></p></li>
+        <li class="step"><p>Turn the heat to low. Simmer, and skim off the foam that rises.<span class="mins">1½–2 hours, mostly hands-off</span></p></li>
+        <li class="step"><p>When you mix the dressing, ladle out 1–2 cups of this broth. Leave the rest simmering.</p></li>
+        <li class="step"><p>Take out the legs. Strain the stock through a fine-mesh sieve into a large bowl. Discard the vegetables and the bay leaves. Season with salt and pepper. Cool what you will not use today, then refrigerate or freeze it.<span class="mins">about 15 minutes, plus cooling</span></p></li>
+      </ol>
+
+      <h3>Cornbread</h3>
+      <p class="note">Start this when the legs come out of the oven. The oven is already at 400°F.</p>
+      <ol class="steps" start="8">
+        <li class="step"><p>In one bowl, stir the cornmeal, baking powder, baking soda, and salt. In another bowl, mix the buttermilk, 1 egg, and ¼ cup vegetable oil. Pour the wet ingredients into the dry and stir just until combined.<span class="mins">about 8 minutes</span></p></li>
+        <li class="step"><p>Pour the batter into a greased 8-inch square baking dish or skillet. Bake until it is golden and a toothpick comes out clean.<span class="mins">20–25 minutes</span></p></li>
+        <li class="step"><p>Cool the cornbread, then crumble it. The dressing wants 4 cups.<span class="mins">about 20 minutes to cool, then 5 minutes to crumble</span></p></li>
+      </ol>
+
+      <h3>Dressing</h3>
+      <ol class="steps" start="11">
+        <li class="step"><p>Heat about 1 tablespoon of oil in a skillet over medium heat. Add the chopped onion, 2–3 chopped celery stalks, and 2–3 minced garlic cloves. Cook until they are soft.<span class="mins">5–7 minutes</span></p></li>
+        <li class="step"><p>Tear the 8 hamburger buns into pieces about the size of the cornbread crumbs. Spread them on a baking sheet. Toast at 350°F until they are lightly golden and dry. Toss them halfway through.<span class="mins">10–15 minutes</span></p></li>
+        <li class="step"><p>In a large bowl, mix the crumbled cornbread, toasted buns, cooked vegetables, ½ tsp black pepper, salt, and a pinch of red pepper flakes if you want a little heat.<span class="mins">about 5 minutes</span></p></li>
+        <li class="step"><p>Stir in the melted butter, the 6 beaten eggs, the grated cheddar, and the sausage or cooked turkey if you are using it. Add turkey broth a little at a time until the mixture is moist but not soggy. The card calls for 1–2 cups.<span class="mins">about 10 minutes</span></p></li>
+        <li class="step"><p>Spread the mixture in a greased 9×13 baking dish. Bake at 350°F until the top is golden and crisp.<span class="mins">30–40 minutes</span></p></li>
+      </ol>
+
+      <h3>Gravy</h3>
+      <p class="note">This uses the drippings from a roasted turkey. Simmer the giblets while that turkey roasts.</p>
+      <ol class="steps" start="16">
+        <li class="step"><p>Rinse the giblets and the neck. Put them in a small saucepan with enough water to cover. Simmer until they are cooked through. Drain, chop them fine, and set them aside.<span class="mins">about 30 minutes</span></p></li>
+        <li class="step"><p>Pour the turkey drippings into a measuring cup. Let them sit so the fat rises. Skim off ¼ cup of fat and put it back in the saucepan. Discard the rest of the fat, or save it for something else.<span class="mins">about 5 minutes</span></p></li>
+        <li class="step"><p>Set the saucepan over medium heat. Whisk in ¼ cup flour and keep whisking until the roux is golden brown.<span class="mins">2–3 minutes</span></p></li>
+        <li class="step"><p>Whisk in turkey broth a little at a time so it stays smooth. Add the chopped giblets and neck. Bring it to a boil, then lower the heat and simmer until it thickens. Start with about 2 cups of broth. The card does not name an amount, so stop when it coats a spoon.<span class="mins">5–10 minutes</span></p></li>
+        <li class="step"><p>Taste it. Add salt and pepper. A little butter, or fresh herbs, is optional. Strain it through a fine-mesh sieve if you want it smooth.<span class="mins">about 3 minutes</span></p></li>
+      </ol>
+
+      <h3>Serve</h3>
+      <div class="card">
+        <p>Serve the dressing warm, with turkey gravy poured over it. Put a can of Ocean Spray cranberry sauce on the table.</p>
+      </div>
+    </section>
+  </main>
+  <script>
+    const key = "powers-dressing-checks";
+    const boxes = document.querySelectorAll('input[type="checkbox"]');
+    let saved = {};
+    try { saved = JSON.parse(localStorage.getItem(key) || "{}"); } catch (e) { saved = {}; }
+    boxes.forEach((box) => {
+      if (saved[box.id]) box.checked = true;
+      box.addEventListener("change", () => {
+        const next = {};
+        boxes.forEach((item) => { next[item.id] = item.checked; });
+        localStorage.setItem(key, JSON.stringify(next));
+      });
+    });
+  </script>
+</body>
+</html>
