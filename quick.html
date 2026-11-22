@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quick Version: Bob and Polly Ann Powers Dressing and Gravy</title>
+  <meta name="description" content="A faster Bob and Polly Ann Powers dressing: bought broth and giblets, cornbread baked or bought, then assemble and bake.">
+  <meta name="theme-color" content="#f4efe6">
+  <style>
+    :root {
+      --paper: #f4efe6;
+      --card: #fffaf3;
+      --ink: #241c16;
+      --muted: #5e5348;
+      --line: #e3d5c2;
+      --rust: #8a3126;
+      --chip: #f0ddc2;
+      --green: #234e39;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 18px/1.45 "Segoe UI", system-ui, sans-serif;
+    }
+    header, main { max-width: 40rem; margin: 0 auto; padding: 1.1rem 1rem 2.5rem; }
+    header { padding-bottom: 0.4rem; }
+    h1 { font-family: Georgia, "Palatino Linotype", serif; font-size: 2rem; line-height: 1.15; margin: 0 0 0.4rem; }
+    .by { color: var(--muted); margin: 0; }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      background: var(--paper);
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    nav a {
+      flex: 0 0 auto;
+      color: var(--ink);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      text-decoration: none;
+      padding: 0.45rem 0.8rem;
+      font-size: 0.95rem;
+    }
+    section { margin-top: 1.6rem; scroll-margin-top: 4.2rem; }
+    h2 { font-family: Georgia, "Palatino Linotype", serif; font-size: 1.45rem; margin: 0 0 0.7rem; }
+    h3 { font-size: 1.05rem; margin: 1.1rem 0 0.35rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      margin: 0 0 0.7rem;
+    }
+    .times { display: grid; gap: 0.55rem; }
+    .times div { display: flex; justify-content: space-between; gap: 0.8rem; align-items: baseline; }
+    .times strong { color: var(--rust); white-space: nowrap; }
+    @media (max-width: 520px) {
+      .times div { flex-direction: column; gap: 0.1rem; }
+    }
+    ul, ol { margin: 0.2rem 0 0; padding: 0; }
+    .shop, .pans, .clock { list-style: none; }
+    .shop li, .pans li, .clock li, .steps li {
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .shop li:last-child, .pans li:last-child, .clock li:last-child, .steps li:last-child { border-bottom: 0; }
+    label { flex: 1; }
+    input[type="checkbox"] { width: 1.25rem; height: 1.25rem; margin-top: 0.2rem; accent-color: var(--green); }
+    .when { color: var(--green); font-weight: 700; min-width: 4.6rem; }
+    .steps { list-style: none; counter-reset: step; }
+    .steps li { counter-increment: step; }
+    .steps li::before {
+      content: counter(step);
+      flex: 0 0 auto;
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 50%;
+      background: var(--rust);
+      color: white;
+      font-size: 0.95rem;
+      display: grid;
+      place-items: center;
+      margin-top: 0.1rem;
+    }
+    .step p { margin: 0; }
+    .mins {
+      display: inline-block;
+      margin-top: 0.3rem;
+      background: var(--chip);
+      border-radius: 999px;
+      padding: 0.12rem 0.55rem;
+      font-size: 0.92rem;
+    }
+    .note { color: var(--muted); font-size: 0.98rem; }
+    .tag {
+      display: inline-block;
+      margin-right: 0.35rem;
+      background: var(--chip);
+      border-radius: 999px;
+      padding: 0.05rem 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Quick Version: Bob and Polly Ann Powers Dressing and Gravy</h1>
+    <p class="by">Same dressing, assembled and baked. Buy the broth and the giblets. Bake the cornbread, or buy it.</p>
+    <nav>
+      <a href="#time">Time</a>
+      <a href="#cuts">What to skip</a>
+      <a href="#shop">Ingredients</a>
+      <a href="#pans">Pans</a>
+      <a href="#clock">Order</a>
+      <a href="#steps">Steps</a>
+      <a href="index.html">Full recipe</a>
+    </nav>
+  </header>
+  <main>
+    <section id="time">
+      <h2>Time</h2>
+      <div class="card times">
+        <div><span>Buy the cornbread</span><strong>about 1 hour 15 minutes</strong></div>
+        <div><span>Bake the cornbread</span><strong>about 2 hours</strong></div>
+        <div><span>Hands-on work, either way</span><strong>about 40 minutes</strong></div>
+      </div>
+      <p class="note">The full recipe takes 3–3½ hours because the turkey stock simmers for about 2 hours. This version buys that broth, so the dressing bake is the long step.</p>
+    </section>
+
+    <section id="cuts">
+      <h2>What to skip</h2>
+      <div class="card">
+        <p><strong>Buy a carton of turkey broth.</strong> That removes the turkey legs, the browning, and the 1½–2 hour simmer.</p>
+        <p><strong>Buy a pack of turkey giblets</strong>, and the neck if it is sold with them. You do not need a whole turkey. Simmer the pack while you do the other work.</p>
+        <p><strong>Use butter for the gravy</strong> in place of fat from a roast. If a turkey is already roasting, use ¼ cup of its drippings instead.</p>
+        <p><strong>Buy shredded cheddar</strong>, and pre-cut onion, celery, and garlic if the store has them.</p>
+        <p><strong>Cornbread is a choice.</strong> Bake it, about 30 minutes in the oven, or buy 4 cups already made and crumble it.</p>
+      </div>
+    </section>
+
+    <section id="shop">
+      <h2>Ingredients</h2>
+      <p class="note">Check these off at the store. Pick one cornbread path.</p>
+
+      <div class="card">
+        <h3>Always buy</h3>
+        <ul class="shop">
+          <li><input id="q-broth" type="checkbox"><label for="q-broth">32 oz turkey broth. Use 1–2 cups in the dressing and about 2 cups in the gravy.</label></li>
+          <li><input id="q-giblets" type="checkbox"><label for="q-giblets">1 pack turkey giblets, plus the neck if the pack includes it. Not a whole turkey.</label></li>
+          <li><input id="q-buns" type="checkbox"><label for="q-buns">8 hamburger buns</label></li>
+          <li><input id="q-onion" type="checkbox"><label for="q-onion">1 medium onion, chopped. Pre-cut is fine.</label></li>
+          <li><input id="q-celery" type="checkbox"><label for="q-celery">2–3 stalks celery, chopped. Pre-cut is fine.</label></li>
+          <li><input id="q-garlic" type="checkbox"><label for="q-garlic">2–3 cloves garlic, minced, or 1 tsp from a jar</label></li>
+          <li><input id="q-eggs" type="checkbox"><label for="q-eggs">6 large eggs for the dressing, plus 1 more if you bake the cornbread</label></li>
+          <li><input id="q-cheese" type="checkbox"><label for="q-cheese">16 oz shredded medium cheddar</label></li>
+          <li><input id="q-butter" type="checkbox"><label for="q-butter">1½ sticks butter. One stick goes in the dressing. ¼ cup (½ stick) replaces the roast fat in the gravy.</label></li>
+          <li><input id="q-oil" type="checkbox"><label for="q-oil">About 1 tablespoon vegetable oil, to cook the vegetables</label></li>
+          <li><input id="q-flour" type="checkbox"><label for="q-flour">¼ cup all-purpose flour, for the gravy</label></li>
+          <li><input id="q-salt" type="checkbox"><label for="q-salt">Salt and black pepper. A pinch of red pepper flakes is optional.</label></li>
+          <li><input id="q-meat" type="checkbox"><label for="q-meat">1 cup cooked crumbled sausage, or chopped cooked turkey (optional)</label></li>
+          <li><input id="q-cran" type="checkbox"><label for="q-cran">1 can Ocean Spray cranberry sauce, for the table</label></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Cornbread, buy or bake</h3>
+        <p><span class="tag">Buy</span> 4 cups crumbled cornbread from the bakery. Plain or lightly sweet. Skip the bake ingredients.</p>
+        <p><span class="tag">Bake</span> 1 cup cornmeal, 1 cup buttermilk, 1 large egg, ¼ cup vegetable oil, 1 tsp baking powder, ½ tsp baking soda, ½ tsp salt. The bake is 30 minutes.</p>
+      </div>
+    </section>
+
+    <section id="pans">
+      <h2>Pots and pans</h2>
+      <div class="card">
+        <ul class="pans">
+          <li><input id="q-pan1" type="checkbox"><label for="q-pan1">Skillet, for the onion, celery, and garlic</label></li>
+          <li><input id="q-pan2" type="checkbox"><label for="q-pan2">Baking sheet, to toast the buns</label></li>
+          <li><input id="q-pan3" type="checkbox"><label for="q-pan3">9×13 baking dish, for the dressing</label></li>
+          <li><input id="q-pan4" type="checkbox"><label for="q-pan4">Small saucepan, for the giblets, then the gravy</label></li>
+          <li><input id="q-pan5" type="checkbox"><label for="q-pan5">8-inch square baking dish or oven-safe skillet, only if you bake the cornbread</label></li>
+        </ul>
+      </div>
+      <p class="note">Also set out a large mixing bowl, a whisk, a knife, and a board. No stockpot and no roasting pan.</p>
+    </section>
+
+    <section id="clock">
+      <h2>Order of work</h2>
+      <h3>If you buy the cornbread</h3>
+      <div class="card">
+        <ul class="clock">
+          <li><span class="when">0:00</span><span>Oven to 350°F. Start the giblets. Cook the vegetables. Tear the buns.</span></li>
+          <li><span class="when">0:10</span><span>Toast the buns. Beat the eggs. Melt one stick of butter.</span></li>
+          <li><span class="when">0:25</span><span>Crumble the cornbread and mix the dressing.</span></li>
+          <li><span class="when">0:35</span><span>Dressing goes into the oven.</span></li>
+          <li><span class="when">0:45</span><span>Chop the giblets and make the gravy while the dressing bakes.</span></li>
+          <li><span class="when">1:15</span><span>Dressing comes out.</span></li>
+        </ul>
+      </div>
+      <h3>If you bake the cornbread</h3>
+      <div class="card">
+        <ul class="clock">
+          <li><span class="when">0:00</span><span>Oven to 400°F. Mix the cornbread. Start the giblets.</span></li>
+          <li><span class="when">0:10</span><span>Cornbread goes in for 30 minutes.</span></li>
+          <li><span class="when">0:40</span><span>Cornbread out to cool. Oven to 350°F. Cook the vegetables. Tear the buns.</span></li>
+          <li><span class="when">0:55</span><span>Toast the buns. Beat the eggs. Melt one stick of butter.</span></li>
+          <li><span class="when">1:10</span><span>Crumble the cornbread, mix the dressing, and put it in the oven.</span></li>
+          <li><span class="when">1:20</span><span>Make the gravy while the dressing bakes.</span></li>
+          <li><span class="when">1:50</span><span>Dressing comes out.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="steps">
+      <h2>Steps</h2>
+      <ol class="steps">
+        <li class="step"><p><span class="tag">Bake</span> Heat the oven to 400°F. Stir the cornmeal, baking powder, baking soda, and salt. Mix the buttermilk, 1 egg, and ¼ cup oil in another bowl. Stir the wet into the dry just until combined. Pour it into a greased 8-inch dish or skillet.<span class="mins">about 10 minutes</span></p></li>
+        <li class="step"><p><span class="tag">Bake</span> Bake until the cornbread is golden and a toothpick comes out clean. Cool it until you can handle it, then crumble 4 cups.<span class="mins">30 minutes to bake, about 15 minutes to cool</span></p></li>
+        <li class="step"><p><span class="tag">Buy</span> Skip the two steps above. Crumble the bought cornbread until you have 4 cups. Heat the oven to 350°F.<span class="mins">about 5 minutes</span></p></li>
+        <li class="step"><p>Put the giblets and the neck in a small saucepan with water to cover. Simmer until they are cooked through. Drain and chop them fine. Start this when the oven goes on so it finishes during the other work.<span class="mins">25–30 minutes, mostly hands-off</span></p></li>
+        <li class="step"><p>Heat about 1 tablespoon of oil in a skillet over medium heat. Cook the onion, celery, and garlic until soft.<span class="mins">5–7 minutes</span></p></li>
+        <li class="step"><p>Tear the buns into pieces about the size of the cornbread crumbs. Toast them on a baking sheet at 350°F until lightly golden and dry. Toss once. If the buns are already stale and dry, 5 minutes is enough.<span class="mins">5–15 minutes</span></p></li>
+        <li class="step"><p>In a large bowl, mix the cornbread, toasted buns, cooked vegetables, ½ tsp black pepper, and salt. Carton broth is often salty, so taste before you add much salt. A pinch of red pepper flakes is optional.<span class="mins">about 5 minutes</span></p></li>
+        <li class="step"><p>Stir in one stick of melted butter, 6 beaten eggs, the shredded cheddar, and the sausage or cooked turkey if you are using it. Add turkey broth a little at a time until the mixture is moist but not soggy. Use 1–2 cups.<span class="mins">about 10 minutes</span></p></li>
+        <li class="step"><p>Spread it in a greased 9×13 baking dish. Bake at 350°F until the top is golden and crisp.<span class="mins">30–40 minutes</span></p></li>
+        <li class="step"><p>While the dressing bakes, make the gravy in the giblet saucepan. Melt ¼ cup butter over medium heat. Whisk in ¼ cup flour until the roux is golden.<span class="mins">2–3 minutes</span></p></li>
+        <li class="step"><p>Whisk in about 2 cups of turkey broth, a little at a time. Add the chopped giblets and neck. Simmer until the gravy coats a spoon. Salt and pepper to taste. If you have real roast drippings, use ¼ cup of that fat instead of the butter.<span class="mins">5–10 minutes</span></p></li>
+        <li class="step"><p>Serve the dressing warm, with the gravy over it, and Ocean Spray cranberry sauce on the table.</p></li>
+      </ol>
+    </section>
+  </main>
+  <script>
+    const key = "powers-dressing-quick-checks";
+    const boxes = document.querySelectorAll('input[type="checkbox"]');
+    let saved = {};
+    try { saved = JSON.parse(localStorage.getItem(key) || "{}"); } catch (e) { saved = {}; }
+    boxes.forEach((box) => {
+      if (saved[box.id]) box.checked = true;
+      box.addEventListener("change", () => {
+        const next = {};
+        boxes.forEach((item) => { next[item.id] = item.checked; });
+        localStorage.setItem(key, JSON.stringify(next));
+      });
+    });
+  </script>
+</body>
+</html>
